@@ -1,0 +1,11 @@
+# Maximal amount of spans that can be pending writes at a time.
+# If 0, no limit is set. Default 10_000_000.
+max_span_count: { }
+# Batch write size. Default 10_000.
+batch_write_size: { }
+# Batch flush interval. Default 5s.
+batch_flush_interval: { }
+# The maximum number of spans to fetch per trace. If 0, no limit is set. Default 0.
+max_num_spans: { }
+# TCP address for http connections to listen vmlogs and explore metrics. Default localhost:9428
+http_listen_addr: ":9428"
