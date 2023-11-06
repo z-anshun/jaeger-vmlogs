@@ -174,6 +174,7 @@ func (r *TraceReader) getStrings(ctx context.Context, q *logstorage.Query, colum
 
 					lock.Lock()
 					if _, ok := resMap[string(value)]; ok {
+						lock.Unlock()
 						continue
 					}
 					resMap[string(value)] = struct{}{}
@@ -376,6 +377,7 @@ func (r *TraceReader) findTraceIDsInRange(ctx context.Context, params *spanstore
 
 					lock.Lock()
 					if _, ok := skip[traceID]; ok {
+						lock.Unlock()
 						continue
 					}
 					skip[traceID] = struct{}{}
